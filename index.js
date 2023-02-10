@@ -65,7 +65,7 @@ app.get('/scrape/users', async(req, res)=>{
         console.log(value);
     request(value, (error, response, html) => {
         console.log(value);
-   // if (!error && response.statusCode === 200) {
+   if (!error && response.statusCode === 200) {
         
       // Load the HTML into cheerio
       const $ = cheerio.load(html);
@@ -90,9 +90,9 @@ app.get('/scrape/users', async(req, res)=>{
 
       res.send("Suuceesfully")
       
-    // } else {
-    //   res.send('Error scraping website.');
-    // }
+    } else {
+      res.send('Error scraping website.');
+    }
   })
   
 })
